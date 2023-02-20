@@ -1,3 +1,5 @@
+/* TicTacToe */
+
 body {
   text-align: center;
   background-color: darkslateblue;
@@ -6,7 +8,21 @@ body {
 #game-title {
   font-family: "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
-  margin: 5%;
+  margin: 5%, 5%, 2%, 5%;
+  color: darkseagreen;
+}
+
+#winner1 {
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  margin: 5%, 5%, 2%, 5%;
+  color: darkseagreen;
+}
+
+#winner2 {
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  margin: 5%, 5%, 2%, 5%;
   color: darkseagreen;
 }
 
@@ -34,4 +50,8 @@ body {
 
 .btn--x {
   background-image: url("x.png");
+}
+
+.hidden {
+  display: none;
 }

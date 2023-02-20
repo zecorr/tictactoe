@@ -10,6 +10,9 @@ const six = document.querySelector("#six");
 const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
+const heading = document.querySelector("#game-title");
+const player1Heading = document.querySelector("#winner1");
+const player2Heading = document.querySelector("#winner2");
 
 // Winning conditions
 const win1 = ["one", "two", "three"];
@@ -25,14 +28,15 @@ const win8 = ["three", "five", "seven"];
 const checkWin = function (arr1, arr2) {
   for (let i = 0; i < arr1.length; i++) {
     if (!arr2.includes(arr1[i])) {
-      console.log("nope");
       return false;
     }
   }
   if (player1) {
-    alert("Player 1 wins!");
+    heading.classList = "hidden";
+    player1Heading.classList.remove("hidden");
   } else if (!player1) {
-    alert("Player 2 wins!");
+    heading.classList = "hidden";
+    player2Heading.classList.remove("hidden");
   }
   return true;
 };
@@ -47,11 +51,9 @@ let player1 = true;
 // Gameplay
 const switchPlayer = function () {
   if (player1) {
-    console.log("one X");
     this.classList.remove("blank");
     this.classList.add("btn--x");
     scoreX.push(this.id);
-    console.log(scoreX);
     this.removeEventListener("click", switchPlayer);
     if (scoreX.length >= 3) {
       checkWin(win1, scoreX);
@@ -65,11 +67,9 @@ const switchPlayer = function () {
     }
     player1 = false;
   } else if (!player1) {
-    console.log("one O");
     this.classList.remove("blank");
     this.classList.add("btn--o");
     scoreO.push(this.id);
-    console.log(scoreO);
     this.removeEventListener("click", switchPlayer);
     if (scoreO.length >= 3) {
       checkWin(win1, scoreO);
