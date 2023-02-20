@@ -4,10 +4,10 @@ body {
 }
 
 #game-title {
-  font-family: 'Arial Narrow Bold', sans-serif;
+  font-family: "Arial Narrow Bold", sans-serif;
   font-size: 3rem;
   margin: 5%;
-  color:darkseagreen
+  color: darkseagreen;
 }
 
 .container {
@@ -19,12 +19,19 @@ body {
 .btn {
   margin: 1px;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 101px;
+  width: 101px;
   border: 1px solid white;
-
 }
 
-.black {
-  background-color: black;
+.blank {
+  background-image: url("blank.png");
+}
+
+.btn--o {
+  background-image: url("o.png");
+}
+
+.btn--x {
+  background-image: url("x.png");
 }
