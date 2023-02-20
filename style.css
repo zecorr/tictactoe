@@ -26,6 +26,13 @@ body {
   color: darkseagreen;
 }
 
+#tieGame {
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  margin: 5%, 5%, 2%, 5%;
+  color: darkseagreen;
+}
+
 .container {
   display: block;
   width: 50%;

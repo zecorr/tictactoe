@@ -1,18 +1,11 @@
 "use strict";
 
-// Playing field
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
-const four = document.querySelector("#four");
-const five = document.querySelector("#five");
-const six = document.querySelector("#six");
-const seven = document.querySelector("#seven");
-const eight = document.querySelector("#eight");
-const nine = document.querySelector("#nine");
+// Global Variables
+const board = document.querySelectorAll(".btn");
 const heading = document.querySelector("#game-title");
 const player1Heading = document.querySelector("#winner1");
 const player2Heading = document.querySelector("#winner2");
+const tieGame = document.querySelector("#tieGame");
 const playAgain = document.querySelector("#playAgain");
 
 // Starting condition
@@ -20,23 +13,6 @@ let scoreX, scoreO, player1;
 scoreX = [];
 scoreO = [];
 player1 = true;
-
-// const init = function () {
-//   one.classList = "btn blank";
-//   two.classList = "btn blank";
-//   three.classList = "btn blank";
-//   four.classList = "btn blank";
-//   five.classList = "btn blank";
-//   six.classList = "btn blank";
-//   seven.classList = "btn blank";
-//   eight.classList = "btn blank";
-//   nine.classList = "btn blank";
-
-//   heading.classList.remove("hidden");
-//   player1Heading.classList = "hidden";
-//   player2Heading.classList = "hidden";
-// };
-// init();
 
 // Winning conditions
 const win1 = ["one", "two", "three"];
@@ -58,9 +34,15 @@ const checkWin = function (arr1, arr2) {
   if (player1) {
     heading.classList = "hidden";
     player1Heading.classList.remove("hidden");
+    board.forEach((button) =>
+      button.removeEventListener("click", switchPlayer)
+    );
   } else if (!player1) {
     heading.classList = "hidden";
     player2Heading.classList.remove("hidden");
+    board.forEach((button) =>
+      button.removeEventListener("click", switchPlayer)
+    );
   }
   return true;
 };
@@ -102,15 +84,10 @@ const switchPlayer = function () {
   }
 };
 
-one.addEventListener("click", switchPlayer);
-two.addEventListener("click", switchPlayer);
-three.addEventListener("click", switchPlayer);
-four.addEventListener("click", switchPlayer);
-five.addEventListener("click", switchPlayer);
-six.addEventListener("click", switchPlayer);
-seven.addEventListener("click", switchPlayer);
-eight.addEventListener("click", switchPlayer);
-nine.addEventListener("click", switchPlayer);
+// Game Board
+board.forEach((button) => button.addEventListener("click", switchPlayer));
+
+// Play again button
 playAgain.addEventListener("click", function () {
   window.location.reload();
 });
