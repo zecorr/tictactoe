@@ -88,6 +88,4 @@ const switchPlayer = function () {
 board.forEach((button) => button.addEventListener("click", switchPlayer));
 
 // Play again button
-playAgain.addEventListener("click", function () {
-  window.location.reload();
-});
+playAgain.addEventListener("click", () => window.location.reload());
